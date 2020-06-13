@@ -27,8 +27,8 @@ class _DateSpecificScreenState extends State<DateSpecificScreen> {
   }
 
   Future<Null> timePicker() async {
-    var result =
-        await showTimePicker(context: context, initialTime: TimeOfDay.now());
+    var result = await showTimePicker(
+        context: context, initialTime: time == null ? TimeOfDay.now() : time);
     if (result != null) {
       setState(() {
         this.time = result;
